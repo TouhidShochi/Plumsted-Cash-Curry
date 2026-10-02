@@ -1,57 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <title>Plumstead Cash & Carry</title>
-  <style>
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#151515}
-    header{background:#034b2f;color:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5}
-    .top{display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;font-size:18px}.cart{font-size:20px}
-    .search{margin-top:13px;background:#fff;border-radius:10px;padding:11px 12px;color:#777}
-    main{padding:18px 14px 90px;max-width:900px;margin:auto}
-    h2{font-size:20px;margin:6px 0 14px}.cats{display:flex;gap:10px;overflow:auto;padding-bottom:8px}
-    .cat{min-width:100px;background:#f2f7f4;border-radius:14px;padding:15px 10px;text-align:center;font-size:13px}
-    .cat b{display:block;font-size:27px;margin-bottom:7px}
-    .banner{margin:18px 0;background:linear-gradient(135deg,#075a38,#0a7d4c);color:#fff;border-radius:18px;padding:22px}
-    .banner h1{font-size:25px;margin:0 0 7px}.banner p{margin:0;opacity:.9}
-    .products{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-    .card{border:1px solid #e8e8e8;border-radius:16px;padding:12px;background:#fff;box-shadow:0 3px 14px #0000000a}
-    .pic{height:115px;border-radius:12px;background:#f6f6f6;display:grid;place-items:center;font-size:55px}
-    .card h3{font-size:14px;margin:10px 0 5px;min-height:34px}.price{font-weight:800;color:#064f32}
-    button{border:0;border-radius:9px;background:#075a38;color:#fff;padding:9px 10px;font-weight:700;float:right}
-    nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;padding:11px 4px calc(11px + env(safe-area-inset-bottom));z-index:6}
-    nav span{font-size:12px;text-align:center} nav b{display:block;font-size:19px;margin-bottom:3px}
-    #toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:10px 15px;border-radius:20px;display:none;z-index:10}
-    @media(min-width:700px){.products{grid-template-columns:repeat(4,1fr)}}
-  </style>
-</head>
-<body>
-<header>
-  <div class="top"><div class="brand">PLUMSTEAD CASH & CARRY</div><div class="cart">🛒 <span id="count">0</span></div></div>
-  <div class="search">🔎 Search groceries...</div>
-</header>
-<main>
-  <div class="banner"><h1>Groceries delivered to your door</h1><p>Fresh essentials, drinks, snacks & household items.</p></div>
-  <h2>Shop by category</h2>
-  <div class="cats">
-    <div class="cat"><b>🥦</b>Fresh</div><div class="cat"><b>🥛</b>Dairy</div>
-    <div class="cat"><b>🥤</b>Drinks</div><div class="cat"><b>🍪</b>Snacks</div><div class="cat"><b>🧼</b>Household</div>
-  </div>
-  <h2 style="margin-top:22px">Popular products</h2>
-  <div class="products">
-    <div class="card"><div class="pic">🥛</div><h3>Fresh Whole Milk 2L</h3><span class="price">£1.75</span><button onclick="add()">Add</button></div>
-    <div class="card"><div class="pic">🍌</div><h3>Bananas 6 Pack</h3><span class="price">£1.20</span><button onclick="add()">Add</button></div>
-    <div class="card"><div class="pic">🍞</div><h3>Soft White Bread</h3><span class="price">£1.45</span><button onclick="add()">Add</button></div>
-    <div class="card"><div class="pic">🥤</div><h3>Cola 1.5L</h3><span class="price">£1.99</span><button onclick="add()">Add</button></div>
-    <div class="card"><div class="pic">🥚</div><h3>Free Range Eggs 6</h3><span class="price">£2.10</span><button onclick="add()">Add</button></div>
-    <div class="card"><div class="pic">🍎</div><h3>Red Apples 6 Pack</h3><span class="price">£2.25</span><button onclick="add()">Add</button></div>
-  </div>
-</main>
-<div id="toast">Added to demo cart ✓</div>
-<nav><span><b>🏠</b>Home</span><span><b>▦</b>Categories</span><span><b>🛒</b>Cart</span><span><b>👤</b>Account</span></nav>
-<script>
-let n=0,t; function add(){n++;document.getElementById('count').textContent=n;let x=document.getElementById('toast');x.style.display='block';clearTimeout(t);t=setTimeout(()=>x.style.display='none',1200)}
-</script>
-</body>
-</html>
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Plumstead Cash & Carry</title><style>*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial;background:#f7f7f7;color:#151515}header{background:#c91424;color:white;padding:18px 16px 15px;position:sticky;top:0;z-index:9}.brand{font-weight:900;font-size:20px}.sub{font-size:11px;opacity:.9;margin-top:3px}.search{background:white;color:#777;border-radius:12px;padding:13px;margin-top:14px}.location{margin-top:12px;background:white;color:#222;border-radius:12px;padding:12px;font-size:13px}main{max-width:720px;margin:auto;padding:14px 14px 90px}.hero{background:linear-gradient(90deg,#17251d,#31573a);color:white;border-radius:18px;padding:22px 18px;margin:4px 0 17px}.hero h1{font-size:26px;margin:0 0 8px}.hero button{background:#e51d2f}.sectionTitle{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}.sectionTitle h2{font-size:20px;margin:0}.sectionTitle a{font-size:13px;color:#c91424}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.cat{background:white;border-radius:14px;padding:12px 5px;text-align:center;font-size:12px;border:1px solid #eee}.cat b{display:block;font-size:30px;margin-bottom:7px}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.card{background:white;border:1px solid #e8e8e8;border-radius:16px;padding:11px}.pic{height:120px;background:#fafafa;border-radius:12px;display:grid;place-items:center;font-size:60px}.card h3{font-size:14px;margin:10px 0 2px}.unit{font-size:11px;color:#777}.row{display:flex;align-items:center;justify-content:space-between;margin-top:9px}.price{font-weight:900;font-size:17px}.add{background:#e51d2f;color:white;border:0;border-radius:9px;padding:9px 13px;font-weight:800}.overlay{position:fixed;inset:0;background:#0008;display:none;z-index:20}.sheet{position:absolute;bottom:0;left:0;right:0;background:white;border-radius:22px 22px 0 0;padding:20px;max-height:82vh;overflow:auto}.sheet h2{margin-top:0}.cartItem{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee}.summary{padding:15px 0;font-size:15px}.summary div{display:flex;justify-content:space-between;margin:8px 0}.checkout{width:100%;padding:14px;border:0;border-radius:11px;background:#e51d2f;color:#fff;font-size:16px;font-weight:800}.close{float:right;border:0;background:#eee;border-radius:50%;width:34px;height:34px}.success{text-align:center;padding:30px 10px}.tick{font-size:65px}.hidden{display:none}nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;padding:10px 3px calc(10px + env(safe-area-inset-bottom));z-index:10}nav button{border:0;background:none;font-size:11px}nav b{display:block;font-size:20px;margin-bottom:3px}.badge{background:#e51d2f;color:#fff;border-radius:20px;padding:1px 6px;font-size:10px}@media(min-width:650px){.products{grid-template-columns:repeat(3,1fr)}.cats{grid-template-columns:repeat(8,1fr)}}</style></head><body>
+<header><div class='brand'>🇬🇧 PLUMSTEAD CASH & CARRY</div><div class='sub'>Fresh Meat • Fish • Poultry • Groceries • Drinks • Fruits & Vegetables</div><div class='search'>🔎 Search for products...</div><div class='location'>📍 Delivering to SE18 1SL &nbsp; <small>Change postcode</small></div></header>
+<main><section class='hero'><h1>Fresh Groceries.<br>Local Prices.</h1><p>Everyday essentials from your local Plumstead store.</p><button class='add' onclick="document.getElementById('products').scrollIntoView()">Shop Now</button></section><div class='sectionTitle'><h2>Categories</h2><a>View all</a></div><div class='cats'><div class='cat'><b>🥦</b>Fresh Produce</div><div class='cat'><b>🥩</b>Meat</div><div class='cat'><b>🐟</b>Fish</div><div class='cat'><b>🥛</b>Dairy</div><div class='cat'><b>🍚</b>Rice</div><div class='cat'><b>🫒</b>Oils</div><div class='cat'><b>🌶️</b>Spices</div><div class='cat'><b>🥤</b>Drinks</div></div><div class='sectionTitle' id='products'><h2>Popular Products</h2><a>See more</a></div><div class='products' id='grid'></div></main>
+<div class='overlay' id='cart'><div class='sheet'><button class='close' onclick='hideCart()'>✕</button><div id='cartView'><h2>Your Cart</h2><div id='items'></div><div class='summary'><div><span>Subtotal</span><b id='sub'>£0.00</b></div><div><span>Delivery</span><b>£2.99</b></div><div style='font-size:19px'><span>Total</span><b id='total'>£2.99</b></div></div><button class='checkout' onclick='checkout()'>Proceed to Checkout</button></div><div id='checkoutView' class='hidden'><h2>Checkout</h2><p><b>Delivery Method</b></p><div class='cartItem'><span>🚚 Home Delivery<br><small>Estimated today 2 PM – 6 PM</small></span><b>£2.99</b></div><p><b>Delivery Address</b></p><div class='cartItem'>John Doe<br>76 Plumstead High St<br>SE18 1SL</div><p><b>Payment Method</b></p><div class='cartItem'>💳 Demo Card Payment</div><button class='checkout' onclick='placeOrder()'>Place Demo Order</button></div><div id='successView' class='hidden success'><div class='tick'>✅</div><h2>Order Placed Successfully!</h2><p>This is a demo order. No payment has been taken.</p><p><b>Order #PC123456</b></p><button class='checkout' onclick='resetAll()'>Continue Shopping</button></div></div></div>
+<nav><button onclick='window.scrollTo({top:0,behavior:"smooth"})'><b>🏠</b>Home</button><button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"><b>▦</b>Categories</button><button onclick='showCart()'><b>🛒 <span class='badge' id='count'>0</span></b>Cart</button><button><b>👤</b>Account</button></nav>
+<script>const products=[['🍌','Banana','1kg',1.29],['🍅','Tomato','1kg',1.99],['🧅','Onion','1kg',1.49],['🥔','Potato','2.5kg',2.99],['🥬','Lettuce','Each',.79],['🥒','Cucumber','Each',.69],['🥛','Whole Milk','2L',1.75],['🥚','Free Range Eggs','6 Pack',2.10],['🍞','White Bread','800g',1.45],['🥤','Cola','1.5L',1.99]];let cart=[];const grid=document.getElementById('grid');products.forEach((p,i)=>grid.innerHTML+=`<div class='card'><div class='pic'>${p[0]}</div><h3>${p[1]}</h3><div class='unit'>${p[2]}</div><div class='row'><span class='price'>£${p[3].toFixed(2)}</span><button class='add' onclick='add(${i})'>＋</button></div></div>`);function add(i){cart.push(i);document.getElementById('count').textContent=cart.length}function render(){let s=0,html='';cart.forEach(i=>{let p=products[i];s+=p[3];html+=`<div class='cartItem'><span>${p[0]} ${p[1]} <small>${p[2]}</small></span><b>£${p[3].toFixed(2)}</b></div>`});document.getElementById('items').innerHTML=html||'<p>Your cart is empty.</p>';document.getElementById('sub').textContent='£'+s.toFixed(2);document.getElementById('total').textContent='£'+(s+2.99).toFixed(2)}function showCart(){render();document.getElementById('cart').style.display='block'}function hideCart(){document.getElementById('cart').style.display='none'}function checkout(){if(!cart.length)return alert('Add a product first');document.getElementById('cartView').classList.add('hidden');document.getElementById('checkoutView').classList.remove('hidden')}function placeOrder(){document.getElementById('checkoutView').classList.add('hidden');document.getElementById('successView').classList.remove('hidden')}function resetAll(){cart=[];document.getElementById('count').textContent=0;document.getElementById('successView').classList.add('hidden');document.getElementById('cartView').classList.remove('hidden');hideCart()}</script></body></html>
