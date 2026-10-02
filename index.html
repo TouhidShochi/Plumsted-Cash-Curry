@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>Plumstead Cash & Carry</title>
+  <style>
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#151515}
+    header{background:#034b2f;color:#fff;padding:18px 16px 14px;position:sticky;top:0;z-index:5}
+    .top{display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;font-size:18px}.cart{font-size:20px}
+    .search{margin-top:13px;background:#fff;border-radius:10px;padding:11px 12px;color:#777}
+    main{padding:18px 14px 90px;max-width:900px;margin:auto}
+    h2{font-size:20px;margin:6px 0 14px}.cats{display:flex;gap:10px;overflow:auto;padding-bottom:8px}
+    .cat{min-width:100px;background:#f2f7f4;border-radius:14px;padding:15px 10px;text-align:center;font-size:13px}
+    .cat b{display:block;font-size:27px;margin-bottom:7px}
+    .banner{margin:18px 0;background:linear-gradient(135deg,#075a38,#0a7d4c);color:#fff;border-radius:18px;padding:22px}
+    .banner h1{font-size:25px;margin:0 0 7px}.banner p{margin:0;opacity:.9}
+    .products{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+    .card{border:1px solid #e8e8e8;border-radius:16px;padding:12px;background:#fff;box-shadow:0 3px 14px #0000000a}
+    .pic{height:115px;border-radius:12px;background:#f6f6f6;display:grid;place-items:center;font-size:55px}
+    .card h3{font-size:14px;margin:10px 0 5px;min-height:34px}.price{font-weight:800;color:#064f32}
+    button{border:0;border-radius:9px;background:#075a38;color:#fff;padding:9px 10px;font-weight:700;float:right}
+    nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;padding:11px 4px calc(11px + env(safe-area-inset-bottom));z-index:6}
+    nav span{font-size:12px;text-align:center} nav b{display:block;font-size:19px;margin-bottom:3px}
+    #toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:10px 15px;border-radius:20px;display:none;z-index:10}
+    @media(min-width:700px){.products{grid-template-columns:repeat(4,1fr)}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="top"><div class="brand">PLUMSTEAD CASH & CARRY</div><div class="cart">🛒 <span id="count">0</span></div></div>
+  <div class="search">🔎 Search groceries...</div>
+</header>
+<main>
+  <div class="banner"><h1>Groceries delivered to your door</h1><p>Fresh essentials, drinks, snacks & household items.</p></div>
+  <h2>Shop by category</h2>
+  <div class="cats">
+    <div class="cat"><b>🥦</b>Fresh</div><div class="cat"><b>🥛</b>Dairy</div>
+    <div class="cat"><b>🥤</b>Drinks</div><div class="cat"><b>🍪</b>Snacks</div><div class="cat"><b>🧼</b>Household</div>
+  </div>
+  <h2 style="margin-top:22px">Popular products</h2>
+  <div class="products">
+    <div class="card"><div class="pic">🥛</div><h3>Fresh Whole Milk 2L</h3><span class="price">£1.75</span><button onclick="add()">Add</button></div>
+    <div class="card"><div class="pic">🍌</div><h3>Bananas 6 Pack</h3><span class="price">£1.20</span><button onclick="add()">Add</button></div>
+    <div class="card"><div class="pic">🍞</div><h3>Soft White Bread</h3><span class="price">£1.45</span><button onclick="add()">Add</button></div>
+    <div class="card"><div class="pic">🥤</div><h3>Cola 1.5L</h3><span class="price">£1.99</span><button onclick="add()">Add</button></div>
+    <div class="card"><div class="pic">🥚</div><h3>Free Range Eggs 6</h3><span class="price">£2.10</span><button onclick="add()">Add</button></div>
+    <div class="card"><div class="pic">🍎</div><h3>Red Apples 6 Pack</h3><span class="price">£2.25</span><button onclick="add()">Add</button></div>
+  </div>
+</main>
+<div id="toast">Added to demo cart ✓</div>
+<nav><span><b>🏠</b>Home</span><span><b>▦</b>Categories</span><span><b>🛒</b>Cart</span><span><b>👤</b>Account</span></nav>
+<script>
+let n=0,t; function add(){n++;document.getElementById('count').textContent=n;let x=document.getElementById('toast');x.style.display='block';clearTimeout(t);t=setTimeout(()=>x.style.display='none',1200)}
+</script>
+</body>
+</html>
